@@ -30,10 +30,7 @@ public class Main {
                         createNewThread(command[1]);
                     } else {
                         createNewThread(command[1]);
-                        listOfThreads.get(listOfThreads.size() - 1).setSeconds(listOfThreads.get(indexOfThred).getSeconds());
-                        listOfThreads.remove(indexOfThred);
-                        listOfThreads.add(indexOfThred, listOfThreads.get(listOfThreads.size() - 1));
-                        listOfThreads.remove(listOfThreads.size() - 1);
+                        setSeconds();
                     }
                     break;
                 case "stop":
@@ -70,5 +67,11 @@ public class Main {
             }
         }
         return null;
+    }
+
+    private static void setSeconds() {
+        listOfThreads.get(listOfThreads.size() - 1).setSeconds(listOfThreads.get(indexOfThred).getSeconds());
+        listOfThreads.set(indexOfThred, listOfThreads.get(listOfThreads.size() - 1));
+        listOfThreads.remove(listOfThreads.size() - 1);
     }
 }
