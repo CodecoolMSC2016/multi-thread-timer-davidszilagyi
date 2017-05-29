@@ -70,8 +70,11 @@ public class Main {
     }
 
     private static void setSeconds() {
-        listOfThreads.get(listOfThreads.size() - 1).setSeconds(listOfThreads.get(indexOfThred).getSeconds());
-        listOfThreads.set(indexOfThred, listOfThreads.get(listOfThreads.size() - 1));
-        listOfThreads.remove(listOfThreads.size() - 1);
+        int lastIndex = listOfThreads.size() - 1;
+        Thred lastAdded = listOfThreads.get(lastIndex);
+        Thred needToReplace = listOfThreads.get(indexOfThred);
+        lastAdded.setSeconds(needToReplace.getSeconds());
+        listOfThreads.set(indexOfThred, lastAdded);
+        listOfThreads.remove(lastIndex);
     }
 }
