@@ -30,7 +30,7 @@ public class Main {
                         createNewThread(command[1]);
                     } else {
                         createNewThread(command[1]);
-                        setSeconds();
+                        setThredSeconds();
                     }
                     break;
                 case "stop":
@@ -69,7 +69,7 @@ public class Main {
         return null;
     }
 
-    private static void setSeconds() {
+    private static void setThredSeconds() {
         int lastIndex = listOfThreads.size() - 1;
         Thred lastAdded = listOfThreads.get(lastIndex);
         Thred needToReplace = listOfThreads.get(indexOfThred);
